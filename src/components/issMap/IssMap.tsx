@@ -20,7 +20,10 @@ const IssMap: FC<IMapProps> = ({ longitude, latitude }) => {
 
   return (
     <GoogleMap
-      mapContainerStyle={{ width: "100%", height: "400px" }}
+      mapContainerStyle={{
+        width: "100%",
+        height: "100%",
+      }}
       center={center}
       zoom={4}
     >

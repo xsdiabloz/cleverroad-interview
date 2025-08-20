@@ -2,7 +2,6 @@ import React, { useEffect, useState, type FC } from "react";
 import { fetchCrewData } from "../../api/crewApi";
 import { type CrewData } from "../../api/crewApi";
 import avatar from "../../../public/photo.jpg";
-import UtcClock from "../utcClock/UtcClock";
 import styles from "../crewList/crewList.module.css";
 
 const CrewList: FC = () => {
@@ -21,10 +20,6 @@ const CrewList: FC = () => {
       }
     };
     fetchCrewDataResult();
-
-    const crewInterval = setInterval(fetchCrewDataResult, 100000);
-
-    return () => clearInterval(crewInterval);
   }, []);
 
   return (
