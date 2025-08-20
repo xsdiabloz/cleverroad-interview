@@ -31,7 +31,6 @@ const CrewList: FC = () => {
           </li>
         ))}
       </ul>
-
       <p>Total amount: {filteredCrew?.length} people on ISS</p>
     </div>
   );
