@@ -1,4 +1,5 @@
 import React, { useEffect, useState, type FC } from "react";
+import styles from "../utcClock/utcClock.module.css";
 
 const UtcClock: FC = () => {
   const [time, setTime] = useState<string>("");
@@ -14,7 +15,12 @@ const UtcClock: FC = () => {
     return () => clearInterval(timer);
   }, []);
 
-  return <div>Current UTC time: {time}</div>;
+  return (
+    <div className={styles["utc-clock"]}>
+      <strong>Current UTC time: </strong>
+      {time}
+    </div>
+  );
 };
 
 export default UtcClock;

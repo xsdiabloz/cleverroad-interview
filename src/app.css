@@ -1,0 +1,20 @@
+.app-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    padding: 20px;
+    background: #f0f2f5;
+    min-height: 100vh;
+
+    .left, .right {
+        flex: 1;
+        background: #f8f9fa;
+        padding: 15px;
+        border-radius: 10px;
+
+    }
+
+    .right .utc-clock-main {
+        margin-bottom: 15px;
+    }
+}

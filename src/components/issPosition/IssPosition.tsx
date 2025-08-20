@@ -25,18 +25,22 @@ const IssPosition: FC = () => {
 
   return (
     <div className={styles["issPosition-wrapper"]}>
-      <h1>Iss now located at</h1>
-
       {iss ? (
         <>
-          <p>
-            longitude: {iss.iss_position.longitude}, latitude:{" "}
-            {iss.iss_position.latitude},
-          </p>
-          <IssMap
-            latitude={parseFloat(iss.iss_position.latitude)}
-            longitude={parseFloat(iss.iss_position.longitude)}
-          />
+          <div className={styles["iss-position-info"]}>
+            <p>
+              <strong>Iss now located at: </strong> <br /> longitude:{" "}
+              {iss.iss_position.longitude}, latitude:
+              {iss.iss_position.latitude},
+            </p>
+
+            <div className={styles["iss-map"]}>
+              <IssMap
+                latitude={parseFloat(iss.iss_position.latitude)}
+                longitude={parseFloat(iss.iss_position.longitude)}
+              />
+            </div>
+          </div>
         </>
       ) : (
         <p>Loading for data...</p>

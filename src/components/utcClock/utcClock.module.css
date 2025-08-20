@@ -1,0 +1,9 @@
+.utc-clock {
+    font-size: 18px;
+    margin-top: 15px;
+    color: #34807c;
+    border: 1.5px solid black;
+    padding: 12px;
+    border-radius: 8px;
+    background-color: white;
+}

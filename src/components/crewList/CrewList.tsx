@@ -3,6 +3,7 @@ import { fetchCrewData } from "../../api/crewApi";
 import { type CrewData } from "../../api/crewApi";
 import avatar from "../../../public/photo.jpg";
 import UtcClock from "../utcClock/UtcClock";
+import styles from "../crewList/crewList.module.css";
 
 const CrewList: FC = () => {
   const [crew, setCrew] = useState<CrewData | null>(null);
@@ -27,11 +28,10 @@ const CrewList: FC = () => {
   }, []);
 
   return (
-    <div>
-      <UtcClock />
-      <ul>
+    <div className={styles["crew-list-info"]}>
+      <ul className={styles["crew-list"]}>
         {filteredCrew?.map((pl, index) => (
-          <li key={index}>
+          <li className={styles["crew-card"]} key={index}>
             <img src={avatar} alt="crewmember-avatar" /> {pl.name}
           </li>
         ))}
