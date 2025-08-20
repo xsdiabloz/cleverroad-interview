@@ -29,8 +29,10 @@ const IssPosition: FC = () => {
         <>
           <div className={styles["iss-position-info"]}>
             <p>
-              <strong>Iss now located at: </strong> <br /> longitude:{" "}
-              {iss.iss_position.longitude}, latitude:
+              <strong>Iss now located at: </strong> <br />{" "}
+              <span style={{ fontStyle: "italic" }}>longitude: </span>
+              {iss.iss_position.longitude},{" "}
+              <span style={{ fontStyle: "italic" }}>latitude: </span>
               {iss.iss_position.latitude},
             </p>
 
@@ -43,7 +45,9 @@ const IssPosition: FC = () => {
           </div>
         </>
       ) : (
-        <p>Loading for data...</p>
+        <div className={styles["card-spinner"]}>
+          <div className={styles["card-spin"]}></div>
+        </div>
       )}
     </div>
   );
