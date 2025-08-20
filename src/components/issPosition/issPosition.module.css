@@ -1,0 +1,8 @@
+.issPosition-wrapper {
+    background-color: rgb(138, 232, 248);
+    padding: 30px;
+
+    p {
+        margin-bottom: 20px;
+    }
+}
