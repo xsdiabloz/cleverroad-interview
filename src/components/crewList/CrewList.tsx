@@ -2,6 +2,7 @@ import React, { useEffect, useState, type FC } from "react";
 import { fetchCrewData } from "../../api/crewApi";
 import { type CrewData } from "../../api/crewApi";
 import avatar from "../../../public/photo.jpg";
+import UtcClock from "../utcClock/UtcClock";
 
 const CrewList: FC = () => {
   const [crew, setCrew] = useState<CrewData | null>(null);
@@ -19,11 +20,16 @@ const CrewList: FC = () => {
       }
     };
     fetchCrewDataResult();
+
+    const crewInterval = setInterval(fetchCrewDataResult, 100000);
+
+    return () => clearInterval(crewInterval);
   }, []);
 
   return (
     <div>
-      <ul className="">
+      <UtcClock />
+      <ul>
         {filteredCrew?.map((pl, index) => (
           <li key={index}>
             <img src={avatar} alt="crewmember-avatar" /> {pl.name}

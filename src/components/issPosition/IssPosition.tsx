@@ -18,9 +18,9 @@ const IssPosition: FC = () => {
     };
     fetchIssDataResult();
 
-    const interval = setInterval(fetchIssDataResult, 5000);
+    const issInterval = setInterval(fetchIssDataResult, 5000);
 
-    return () => clearInterval(interval);
+    return () => clearInterval(issInterval);
   }, []);
 
   return (
